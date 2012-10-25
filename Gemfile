@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+gem 'bootstrap-sass', '2.0.4'
 gem 'unicorn'
 
 # Bundle edge Rails instead:
@@ -12,6 +13,7 @@ group :development, :test do
 	gem 'twitter-bootstrap-rails'
 	gem 'guard-spork', '1.2.0'
   	gem 'spork', '0.9.2'
+  	gem 'guard-livereload'
 end
 
 

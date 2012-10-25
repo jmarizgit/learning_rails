@@ -48,3 +48,12 @@ guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAIL
   watch(%r{features/support/}) { :cucumber }
 end
 
+
+guard 'livereload', :api_version => '1.4', :port => '8080', :host => '0.0.0.0' do
+  watch(%r{app/views/.+\.(erb|haml|slim)$})
+  watch(%r{app/helpers/.+\.rb})
+  watch(%r{public/.+\.(css|js|html)})
+  watch(%r{config/locales/.+\.yml})
+  # Rails Assets Pipeline
+  watch(%r{(app|vendor)/assets/\w+/(.+\.(css|js|html)).*})  { |m| "/assets/#{m[2]}" }
+end
